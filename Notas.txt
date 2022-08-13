@@ -1,0 +1,5 @@
+Inicio de Proyecto {
+    yarn create vite
+    luego ejecutamos "yarn" o "yarn install" para instalar las dependencias
+    yarn dev -> se ejecuta en desarrollo en el puerto http://localhost:5173/
+}
