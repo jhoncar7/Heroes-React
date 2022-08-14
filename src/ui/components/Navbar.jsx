@@ -4,10 +4,12 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 export const Navbar = () => {
 
     const navigate = useNavigate();
+    const user = localStorage.getItem('user');
 
     const onLogout = () => {
         /* localStorage.removeItem('token');
         window.location.href = '/login'; */
+        localStorage.removeItem('user');
         console.log('logout');
         navigate('/login', { replace: true });
     }
@@ -43,7 +45,7 @@ export const Navbar = () => {
                         className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
                         to="/search"
                     >
-                        SearchPage
+                        Search
                     </NavLink>
                 </div>
             </div>
@@ -51,7 +53,7 @@ export const Navbar = () => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
                     <span className='nav-item nav-link text-primary'>
-                        Jhoncar
+                        {user}
                     </span>
 
                     <button
