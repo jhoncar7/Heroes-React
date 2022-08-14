@@ -3,9 +3,7 @@ import { LoginPage } from "../auth"
 import { HeroesRoutes } from "../heroes"
 
 
-
 export const AppRouter = () => {
-
     return (
         <>
             <Routes>
