@@ -17,12 +17,16 @@ export const LoginPage = () => {
   const onLogin = (e) => {
     e.preventDefault();
     if (name === '') return;
-    
-    login(name);
 
-    navigate('/marvel', {
+    const lastPath = localStorage.getItem('lastPath') || '/';
+
+    login(name);
+    navigate(lastPath, {
       replace: true
     })
+    /* navigate('/marvel', {
+      replace: true
+    }) */
   }
 
   return (
