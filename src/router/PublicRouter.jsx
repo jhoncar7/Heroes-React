@@ -5,6 +5,7 @@ import { AuthContext } from '../auth'
 export const PublicRouter = ({ children }) => {
 
     const { isAuthenticated } = useContext(AuthContext);
+    console.log('Public: ',isAuthenticated);
 
     return (!isAuthenticated)
         ? children
