@@ -1,20 +1,24 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
 import { useForm } from "../../hooks/useForm";
+import { AuthContext } from "../context";
 
 
 export const LoginPage = () => {
 
-  const { user, onInputChange } = useForm({
-    user: ''
+  const { login } = useContext(AuthContext);
+
+  const { name, onInputChange } = useForm({
+    name: ''
   });
 
   const navigate = useNavigate()
 
   const onLogin = (e) => {
     e.preventDefault();
-    if (user === '') return;
-
-    localStorage.setItem('user', user);
+    if (name === '') return;
+    
+    login(name);
 
     navigate('/marvel', {
       replace: true
@@ -33,9 +37,9 @@ export const LoginPage = () => {
               type="text"
               placeholder='Ingrese un nombre de usuario'
               className='form-control'
-              name='user'
+              name='name'
               autoComplete='off'
-              value={user}
+              value={name}
               onChange={onInputChange}
             />
             <button className='btn btn-outline-primary mt-3'>Login</button>

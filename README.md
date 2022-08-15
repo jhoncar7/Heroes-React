@@ -2,7 +2,7 @@
 
 ## Link pagina WEB en react desplegada en netlify
 
-Link -> [Search GIF](https://comics-marve-dc.netlify.app).
+Link -> [Heroes de Comics [Marvel - DC]](https://comics-marve-dc.netlify.app).
 
 
 ## Vista
